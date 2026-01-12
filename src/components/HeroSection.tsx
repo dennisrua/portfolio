@@ -9,16 +9,17 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Gradient Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{ background: 'var(--gradient-hero)' }}
       />
 
       {/* Radial Glow */}
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-30 pointer-events-none"
-        style={{ 
-          background: 'radial-gradient(circle, hsl(38 92% 55% / 0.15) 0%, transparent 70%)'
+        style={{
+          background:
+            'radial-gradient(circle, hsl(38 92% 55% / 0.15) 0%, transparent 70%)',
         }}
       />
 
@@ -44,8 +45,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
               className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6"
             >
-              Dennis Rua{' '}
-              <span className="text-gradient">Mazerah</span>
+              Dennis Rua <span className="text-gradient">Mazerah</span>
             </motion.h1>
 
             {/* Title */}
@@ -56,7 +56,8 @@ const HeroSection = () => {
               className="mb-6"
             >
               <h2 className="text-lg md:text-xl lg:text-2xl font-medium text-muted-foreground">
-                Software Developer <span className="text-primary">|</span> Frontend Engineer
+                Software Developer <span className="text-primary">|</span>{' '}
+                Frontend Engineer
               </h2>
             </motion.div>
 
@@ -67,11 +68,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
               className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              Crafting beautiful, responsive, and user-focused web experiences with 
-              <span className="text-foreground font-medium"> React</span>, 
-              <span className="text-foreground font-medium"> Next.js</span>, and 
-              <span className="text-foreground font-medium"> Tailwind CSS</span>. 
-              Passionate about clean code and intuitive interfaces.
+              Crafting beautiful, responsive, and user-focused web experiences
+              with
+              <span className="text-foreground font-medium"> React</span>,
+              <span className="text-foreground font-medium"> Next.js</span>, and
+              <span className="text-foreground font-medium"> Tailwind CSS</span>
+              . Passionate about clean code and intuitive interfaces.
             </motion.p>
 
             {/* Social Links */}
@@ -82,9 +84,21 @@ const HeroSection = () => {
               className="flex items-center justify-center lg:justify-start gap-4 mb-8"
             >
               {[
-                { Icon: Github, href: 'https://github.com/dennisrua', label: 'GitHub' },
-                { Icon: Linkedin, href: 'https://linkedin.com/in/dennisrua', label: 'LinkedIn' },
-                { Icon: Mail, href: 'mailto:dennisrua@email.com', label: 'Email' },
+                {
+                  Icon: Github,
+                  href: 'https://github.com/dennisrua',
+                  label: 'GitHub',
+                },
+                {
+                  Icon: Linkedin,
+                  href: 'https://linkedin.com/in/dennisrua',
+                  label: 'LinkedIn',
+                },
+                {
+                  Icon: Mail,
+                  href: 'mailto:dennisrua@email.com',
+                  label: 'Email',
+                },
               ].map(({ Icon, href, label }, index) => (
                 <motion.a
                   key={label}
@@ -112,13 +126,21 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
             >
               <button
-                onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector('#projects')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
                 className="btn-primary"
               >
                 View My Work
               </button>
               <button
-                onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .querySelector('#contact')
+                    ?.scrollIntoView({ behavior: 'smooth' })
+                }
                 className="btn-outline"
               >
                 Get In Touch
@@ -135,14 +157,14 @@ const HeroSection = () => {
           >
             <div className="relative">
               {/* Glow Effect */}
-              <div 
+              <div
                 className="absolute inset-0 rounded-full blur-3xl opacity-40"
                 style={{ background: 'hsl(var(--primary) / 0.3)' }}
               />
               {/* Photo Container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="public/images/dennis.png"
                   alt="Dennis Rua Mazerah"
                   className="w-full h-full object-cover"
                 />
@@ -152,9 +174,29 @@ const HeroSection = () => {
               {/* Decorative Ring */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
                 className="absolute -inset-4 rounded-full border border-dashed border-primary/30"
-              />
+              >
+                {[...Array(12)].map((_, i) => (
+                  <span
+                    key={i}
+                    className={`
+        absolute left-1/2 top-1/2
+        ${
+          i % 2 === 0
+            ? 'h-2 w-2 rounded-full bg-primary/40'
+            : 'h-2 w-2 rotate-45 bg-primary/30'
+        }
+      `}
+                    style={{
+                      transform: `
+          rotate(${(360 / 12) * i}deg)
+          translate(225px)
+        `,
+                    }}
+                  />
+                ))}
+              </motion.div>
             </div>
           </motion.div>
         </div>
