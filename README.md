@@ -35,7 +35,8 @@ The focus of this project is not only visual appeal, but also **clean architectu
 
 ## Tech Stack
 
-- **Next.js (React Framework)**
+- **React**
+- **Vite**
 - **Tailwind CSS**
 - **Framer Motion**
 - **GSAP**
@@ -46,11 +47,12 @@ The focus of this project is not only visual appeal, but also **clean architectu
 
 ## Design & Engineering Decisions
 
-- **Next.js** was chosen for routing, SEO optimization, and production readiness
-- **Tailwind CSS** enables rapid development while maintaining consistent design patterns
-- **Framer Motion + GSAP** are used selectively to create smooth, performant animations
-- **Scroll-based rendering** improves user focus and reduces initial render load
-- User-controlled audio respects accessibility and UX best practices
+- **Vite** was chosen for its fast development server and modern build tooling
+- **React** provides a flexible component-based architecture
+- **Tailwind CSS** enables consistent, utility-first styling with minimal overhead
+- **Framer Motion and GSAP** are used selectively to create smooth, performant animations
+- Scroll-triggered rendering improves focus and reduces initial visual overload
+- User-controlled audio follows accessibility and UX best practices
 
 ---
 
