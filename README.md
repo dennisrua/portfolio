@@ -65,7 +65,7 @@ npm install
 npm run dev
 ```
 
--The application runs on http://localhost:3000.
+-The development server runs on: http://localhost:8080
 
 ## About Me
 
