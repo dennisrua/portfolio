@@ -5,34 +5,38 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 const projects = [
   {
     title: 'Astra Watch Website',
-    description: 'A premium e-commerce platform for luxury timepieces featuring an elegant UI, smooth animations, and seamless shopping experience.',
-    tech: ['React', 'Tailwind CSS', 'Framer Motion', 'REST API'],
+    description:
+      'A sleek and modern movie recommendation web application with personalized watchlists and movie details.',
+    tech: ['React', 'Next.js 16', 'TypeScript', 'TMDB API'],
+    image: null,
+    liveUrl: 'https://astra-watch.vercel.app/',
+    githubUrl: 'https://github.com/dennisrua/astra-watch',
+    featured: true,
+  },
+  {
+    title: 'Task Management App',
+    description:
+      'A productivity application with drag-and-drop functionality, real-time updates, and intuitive task organization.',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    image: null,
+    liveUrl: '#',
+    githubUrl: '#',
+    featured: false,
+  },
+  {
+    title: 'SACCO Management System',
+    description:
+      'A web-based SACCO management system developed to manage member records, loan applications, savings contributions, and payment tracking, with a focus on data accuracy and operational efficiency.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
     image: null,
     liveUrl: '#',
     githubUrl: '#',
     featured: true,
   },
   {
-    title: 'Task Management App',
-    description: 'A productivity application with drag-and-drop functionality, real-time updates, and intuitive task organization.',
-    tech: ['React', 'TypeScript', 'Zustand', 'Tailwind'],
-    image: null,
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
-    title: 'Weather Dashboard',
-    description: 'A beautiful weather application with location-based forecasts, interactive maps, and stunning visualizations.',
-    tech: ['Next.js', 'OpenWeather API', 'Chart.js', 'Geolocation'],
-    image: null,
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
     title: 'Portfolio Template',
-    description: 'A customizable portfolio template for developers featuring modern animations and responsive design.',
+    description:
+      'A customizable portfolio template for developers featuring modern animations and responsive design.',
     tech: ['React', 'GSAP', 'Tailwind CSS', 'TypeScript'],
     image: null,
     liveUrl: '#',
@@ -61,7 +65,8 @@ const ProjectsSection = () => {
             Recent <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects that showcase my skills and passion for building exceptional digital experiences.
+            A selection of projects that showcase my skills and passion for
+            building exceptional digital experiences.
           </p>
         </motion.div>
 
@@ -104,7 +109,9 @@ const ProjectsSection = () => {
               </div>
             </div>
             <div className="p-6 md:p-8">
-              <p className="text-muted-foreground mb-4">{projects[0].description}</p>
+              <p className="text-muted-foreground mb-4">
+                {projects[0].description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {projects[0].tech.map((tech) => (
                   <span
