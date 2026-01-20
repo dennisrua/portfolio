@@ -41,14 +41,19 @@ const Navbar = ({ isPlaying, onToggleMusic }: NavbarProps) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' : 'bg-transparent'
+          isScrolled
+            ? 'bg-background/80 backdrop-blur-xl border-b border-border/50'
+            : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo & Music Toggle */}
             <div className="flex items-center gap-4">
-              <a href="#" className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="font-display font-bold text-xl text-foreground hover:text-primary transition-colors"
+              >
                 Dennis<span className="text-primary">.</span>
               </a>
               <motion.button
@@ -85,7 +90,7 @@ const Navbar = ({ isPlaying, onToggleMusic }: NavbarProps) => {
             {/* CTA & Mobile Menu */}
             <div className="flex items-center gap-4">
               <motion.a
-                href="/resume.pdf"
+                href="/docs/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, x: 20 }}
@@ -136,7 +141,7 @@ const Navbar = ({ isPlaying, onToggleMusic }: NavbarProps) => {
                 </motion.button>
               ))}
               <motion.a
-                href="/resume.pdf"
+                href="/docs/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -20 }}
