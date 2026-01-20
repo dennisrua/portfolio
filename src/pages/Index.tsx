@@ -43,7 +43,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* SINGLE audio source */}
-      <audio ref={audioRef} src="/public/audio/ambient.mp3" />
+      <audio ref={audioRef} src="/audio/ambient.mp3" />
 
       <ParticleBackground />
 
