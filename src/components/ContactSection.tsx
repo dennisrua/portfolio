@@ -1,13 +1,19 @@
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { Mail, Github, Linkedin, ArrowUpRight, MessageCircle } from 'lucide-react';
+import {
+  Mail,
+  Github,
+  Linkedin,
+  ArrowUpRight,
+  MessageCircle,
+} from 'lucide-react';
 
 const contactLinks = [
   {
     Icon: Mail,
     label: 'Email',
-    value: 'dennisrua@email.com',
-    href: 'mailto:dennisrua@email.com',
+    value: 'ruadennis20@gmail.com',
+    href: 'mailto:ruadennis20@gmail.com',
     color: 'from-rose-500 to-orange-500',
   },
   {
@@ -21,7 +27,7 @@ const contactLinks = [
     Icon: Linkedin,
     label: 'LinkedIn',
     value: 'Dennis Rua Mazerah',
-    href: 'https://linkedin.com/in/dennisrua',
+    href: 'https://www.linkedin.com/in/dennis-rua-03249b15a/',
     color: 'from-blue-500 to-blue-700',
   },
 ];
@@ -32,10 +38,11 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
       {/* Background Glow */}
-      <div 
+      <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] opacity-20 pointer-events-none"
-        style={{ 
-          background: 'radial-gradient(ellipse, hsl(38 92% 55% / 0.3) 0%, transparent 70%)'
+        style={{
+          background:
+            'radial-gradient(ellipse, hsl(38 92% 55% / 0.3) 0%, transparent 70%)',
         }}
       />
 
@@ -54,7 +61,7 @@ const ContactSection = () => {
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-            I'm always open to discussing new opportunities, creative projects, 
+            I'm always open to discussing new opportunities, creative projects,
             or just having a conversation about technology and design.
           </p>
         </motion.div>
@@ -73,11 +80,12 @@ const ContactSection = () => {
             Ready to Build Something Amazing?
           </h3>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-            Whether you have a project in mind or just want to chat, I'd love to hear from you. 
-            Let's create something exceptional together.
+            Whether you have a project in mind or just want to chat, I'd love to
+            hear from you. Let's create something exceptional together.
           </p>
           <a
-            href="mailto:dennisrua@email.com"
+            href="mailto:ruadennis20@gmail.com"
+            target="_blank"
             className="btn-primary inline-flex items-center gap-2"
           >
             <Mail className="w-5 h-5" />
@@ -98,12 +106,18 @@ const ContactSection = () => {
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               className="skill-card group flex items-center gap-4"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}
+              >
                 <link.Icon className="w-6 h-6 text-foreground" />
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-sm text-muted-foreground">{link.label}</span>
-                <p className="text-foreground font-medium truncate">{link.value}</p>
+                <span className="text-sm text-muted-foreground">
+                  {link.label}
+                </span>
+                <p className="text-foreground font-medium truncate">
+                  {link.value}
+                </p>
               </div>
               <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
             </motion.a>
