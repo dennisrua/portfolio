@@ -4,40 +4,28 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 const experiences = [
   {
+    title: 'Freelance Web Developer',
+    company: 'Self-Employed',
+    location: 'Remote',
+    period: '2025 - Present',
+    description: [
+      'Build custom websites for small businesses and startups',
+      'Implement responsive designs with focus on mobile-first approach',
+      'Integrate third-party APIs and payment gateways',
+      'Manage client relationships and project timelines',
+    ],
+    current: true,
+  },
+  {
     title: 'Frontend Developer Intern',
     company: 'Quickkopa Micro Enterprises Ltd',
-    location: 'Nairobi, Kenya',
-    period: '2023 - Present',
+    location: 'Kilifi, Kenya',
+    period: 'January 2024 - June 2024',
     description: [
       'Developed and maintained responsive web applications using React and Tailwind CSS',
       'Collaborated with the design team to implement pixel-perfect UI components',
       'Optimized application performance resulting in 40% faster load times',
       'Participated in code reviews and contributed to team best practices',
-    ],
-    current: true,
-  },
-  {
-    title: 'Freelance Web Developer',
-    company: 'Self-Employed',
-    location: 'Remote',
-    period: '2022 - 2023',
-    description: [
-      'Built custom websites for small businesses and startups',
-      'Implemented responsive designs with focus on mobile-first approach',
-      'Integrated third-party APIs and payment gateways',
-      'Managed client relationships and project timelines',
-    ],
-    current: false,
-  },
-  {
-    title: 'Computer Science Student',
-    company: 'University',
-    location: 'Kenya',
-    period: '2020 - 2024',
-    description: [
-      'Studied Data Structures, Algorithms, and Software Engineering',
-      'Completed multiple projects in web and mobile development',
-      'Active member of the coding club and hackathon participant',
     ],
     current: false,
   },
@@ -47,7 +35,10 @@ const ExperienceSection = () => {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="experience" className="section-padding bg-secondary/20 relative">
+    <section
+      id="experience"
+      className="section-padding bg-secondary/20 relative"
+    >
       <div className="max-w-4xl mx-auto" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -63,7 +54,8 @@ const ExperienceSection = () => {
             Work <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            My professional journey in software development, from learning to creating impact.
+            My professional journey in software development, from learning to
+            creating impact.
           </p>
         </motion.div>
 
@@ -93,23 +85,31 @@ const ExperienceSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className={`md:${index % 2 === 0 ? 'text-right pr-12' : 'col-start-2 pl-12'}`}>
-                  <div className={`skill-card ${exp.current ? 'border-primary/30' : ''}`}>
+                <div
+                  className={`md:${
+                    index % 2 === 0 ? 'text-right pr-12' : 'col-start-2 pl-12'
+                  }`}
+                >
+                  <div
+                    className={`skill-card ${
+                      exp.current ? 'border-primary/30' : ''
+                    }`}
+                  >
                     {exp.current && (
                       <span className="inline-block px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full mb-3">
                         Current
                       </span>
                     )}
-                    
+
                     <h3 className="font-display text-xl font-semibold text-foreground mb-1">
                       {exp.title}
                     </h3>
-                    
+
                     <div className="flex items-center gap-2 text-primary font-medium mb-3">
                       <Briefcase className="w-4 h-4" />
                       <span>{exp.company}</span>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
@@ -120,10 +120,13 @@ const ExperienceSection = () => {
                         {exp.location}
                       </span>
                     </div>
-                    
+
                     <ul className="space-y-2">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="text-muted-foreground text-sm flex items-start gap-2">
+                        <li
+                          key={i}
+                          className="text-muted-foreground text-sm flex items-start gap-2"
+                        >
                           <span className="text-primary mt-1.5">•</span>
                           <span>{item}</span>
                         </li>
